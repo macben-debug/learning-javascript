@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 7</title>
+  </head>
+  <body>
+    <script>
+      function greet(name){
+        if (!name ){
+          console.log('Hi there !');
+        }
+        else{
+          console.log(`Hello ${name}!`);
+
+        }
+      }
+      greet();
+
+      function convertToFahrenheit(celsius){
+        let Fahrenheit = 0;
+        Fahrenheit = (celsius * 9/5) +32;
+        return Fahrenheit;
+      }
+
+      function convertToCelsius(fahrenheit){
+        let celsius = (fahrenheit -32) *5 /9;
+        return celsius;
+      }
+
+      function convertTemperature(degree,unit){
+        let value = 0;
+        let unit2='';
+        if( unit === 'F'){
+          value = (degree -32) *5 /9;
+          unit2 = 'C';
+          
+        }
+        else if( unit === 'C'){
+          value = (degree * 9/5) +32;
+          unit2 = 'F';
+        }
+        return `Converting from ${degree}${unit} to ${value}${unit2}`;
+      }
+
+      function convertLength(length,from,to){
+        if (from === 'miles' && to === 'km'){
+          length = length *1.6;
+        }
+        else if (from ==='km' && to ==='miles'){
+          length= length/1.6;
+        }
+        else if (from === 'miles'&& to === 'ft'){
+          length= length * 5280;
+        }
+        else if (from === 'km'&& to === 'ft'){
+          length= length * 3281;
+        }
+        else{
+          return `invalid unit: ${from}`;
+        }
+        return `${length} ${to}`;
+      }
+
+      console.log(convertToFahrenheit(25));
+      console.log(convertToCelsius(86));
+      console.log(convertTemperature(25,'C'));
+
+
+      console.log(convertLength(5,'miles','km'));
+      console.log(convertLength(5,'miles','ft'));
+      console.log(convertLength(5,'km','ft'));
+      console.log(convertLength(5,'lbs','lbs'));
+
+    </script>
+  </body>
+</html>
