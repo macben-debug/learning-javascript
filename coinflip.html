@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="playGame('heads')">Heads</button>
+    <button onclick="playGame('tails')">Tails</button>
+
+    <script>
+
+      //let score={
+      //  wins:0,
+      //  losses: 0,
+      //}; 
+
+      const score = JSON.parse(localStorage.getItem('score'))||{
+        wins:0,
+        losses: 0,
+      }; 
+      function computermove(){
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+        return result;
+      }
+
+
+      function playGame(guess){
+        let optionPicked =  guess? 'heads' : 'tails';
+        const computer = computermove();
+        let result = ''
+
+        const answer = optionPicked === computer;
+        if(answer){
+          result = 'You won !!';
+          score.wins+=1;
+        }
+        else{
+          result= 'You lose';
+          score.losses +=1;
+        }
+        
+        alert(`${result} \nWins : ${score.wins} Losses : ${score.losses}`);
+        localStorage.setItem('score',JSON.stringify(score));
+
+        //console.log( optionPicked === computer ? 'You won!'  : 'You lose!');
+        //optionPicked === computer ?score.wins +=1 : score.losses +=1;
+
+        //console.log(`${computer}  ${optionPicked}`)
+
+       
+      }
+      
+      
+
+     // const guess = 'heads';
+      //console.log(guess === result ? 'You win!' : 'You lose!');
+    </script>
+  </body>
+</html>
