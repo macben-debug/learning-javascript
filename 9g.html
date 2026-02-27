@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe()" 
+      class="js-subscribe-button">
+      Subscribe
+    </button>
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of order" class="js-cost-input" 
+      onkeydown="handleCostKeydown(event)">
+
+    <button onclick="calculateTotal()">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+
+    <input placeholder="Type something" onkeyup="textDisplay()" class="text">
+    <p class="js-display"></p>
+    <script>
+      /*String(25)
+      console.log('25'-5);
+
+      window.document
+      window.console.log('window');
+      window.alert
+
+      */
+      function handleCostKeydown(event){
+        if(event.key ==='Enter'){
+        calculateTotal();
+      }
+      }
+
+      function subscribe(){
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if(buttonElement.innerText === 'Subscribe'){
+          buttonElement.innerText = 'Subscribed';
+        }
+        else{
+          buttonElement.innerText= 'Subscribe';
+        }
+      }
+
+      function calculateTotal(){
+        const inputElement= document.querySelector('.js-cost-input');
+        let cost =Number( inputElement.value) *100;
+
+        if(cost <= 4000){
+          cost +=1000;
+        }
+        document.querySelector('.js-total-cost').innerHTML= `$${cost/100}`;
+      }
+
+      function textDisplay(){
+        document.querySelector('.js-display').innerHTML=   document.querySelector('.text').value;
+      }
+     
+    </script>
+  </body>
+</html>
