@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet"  href="styles/10-exercise.css">
+  </head>
   <body>
     <button class="js-button">Test</button>
+    <button class="js-tech games" onclick="toggle('.js-tech')">Tech</button>
+
+    <button class="js-games games" onclick="toggle('.js-games')">Gaming</button>
+
+    <button class="js-music games" onclick="toggle('.js-music')">Music</button>
   </body>
-  <script>
-    const buttonElement = document.querySelector('js-button');
-    console.log(buttonElement.classList.contains('js-button'));
+
+
+  <script src="scripts/10-exercise.js">
+
   </script>
 </html>

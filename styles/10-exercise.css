@@ -1,0 +1,14 @@
+
+.games{
+  border: none;
+  background-color: rgb(225, 225, 225);
+  padding:10px 15px;
+  border-radius: 4px;
+  font-size:large;
+  font-weight: 100;
+  cursor: pointer;
+}
+.is-toggled{
+  background-color: black;
+  color: white;
+}
