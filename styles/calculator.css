@@ -1,0 +1,28 @@
+body{
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.calculation-screen{
+  color: white;
+  font-size: 45px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+button{
+  font-size:x-large;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 60px;
+  font-weight: bold;
+  margin-right:5px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+}
+.character {
+  background-color: rgb(243, 169, 32);
+}
+.clear{
+  font-weight: lighter;
+  font-size: 17px; 
+}

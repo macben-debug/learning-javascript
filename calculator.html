@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="styles/calculator.css">
+  </head>
   <body>
-    <p class="js-display"></p>
+    <p class="js-display calculation-screen"></p>
     <p>
       <button onclick="
         updateCalculation('1');
@@ -18,7 +20,7 @@
 
       <button onclick="
         updateCalculation(' + ');
-      ">+</button>
+      "class="character">+</button>
     </p>
 
     <p>
@@ -36,7 +38,7 @@
 
       <button onclick="
         updateCalculation(' - ');
-      ">-</button>
+      "class="character">-</button>
     </p>
 
     <p>
@@ -50,11 +52,11 @@
 
       <button onclick="
         updateCalculation('9');
-      ">9</button>
+      " >9</button>
 
       <button onclick="
         updateCalculation(' * ');
-      ">*</button>
+      "class="character">*</button>
     </p>
 
     <p>
@@ -80,7 +82,7 @@
 
       <button onclick="
         updateCalculation(' / ');
-      ">/</button>
+      "class="character">/</button>
     </p>
 
     <p>
@@ -90,26 +92,11 @@
         showAnswer();
 
         localStorage.setItem('calculation',calculation);
-      ">Clear</button>
+      "
+      class="clear">Clear</button>
     </p>
 
-    <script>
-      let calculation = localStorage.getItem('calculation')||'';
-
-      showAnswer();
-      function updateCalculation(value) {
-        calculation += value;
-       // console.log(calculation);
-        showAnswer();
-        localStorage.setItem('calculation',calculation);
-
-      }
-
-      function showAnswer(){
-        document.querySelector('.js-display').innerHTML= calculation;
-
-      }
-      
+    <script src="scripts/calculator.js"></script> 
     </script>
   </body>
 </html>
