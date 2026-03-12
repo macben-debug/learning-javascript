@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+
+    <script>
+     const nums= [10,20,30];
+     nums[2]=99;
+     console.log(nums);
+     
+
+     function getlastValue(index){
+      const value = index.length -1;
+      console.log(index[value]);
+     }
+
+     const lasindex = ['hi','hello','good'];
+     
+     getlastValue(lasindex);
+
+     function arraySwap(array){
+      let lastIndex = array.length -1;
+
+      let firstValue = array[0];
+      let lastValue= array[lastIndex];
+      
+      array[lastIndex] = firstValue;
+       array[0]=lastValue;
+
+      return array;
+     }
+
+     const array =[1,20,22,24,5];
+
+     console.log(arraySwap(array));
+
+     for (let i =0; i <=10;i+=2){
+      console.log(i)
+     }
+     for (let i =5; i >0 ;i--){
+      console.log(i)
+     }
+    </script>
+  </body>
+</html>
