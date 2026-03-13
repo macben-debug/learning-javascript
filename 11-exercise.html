@@ -44,6 +44,73 @@
      for (let i =5; i >0 ;i--){
       console.log(i)
      }
+
+     let i = 0;
+
+     while (i<10){
+      i++;
+      console.log(i)
+
+     }
+     while (i>0){
+      i--;
+      console.log(i);
+     }
+
+
+     console.log('----------11g--------------')
+     let oldArray =[1-2,-1,0,99];
+     let newArray=[];
+
+
+     for (let i =0; i<oldArray.length; i++){
+        newArray.push(oldArray[i]+1); 
+
+      }
+      console.log(newArray);
+
+      function addOne(array){
+        let arrayPlusOne =[];
+        for(let i =0;i <array.length; i++){
+          arrayPlusOne.push(array[i] +1);
+        }
+        return arrayPlusOne;
+      }
+
+      console.log(addOne(newArray));
+
+      function addNum(array,num){
+        let increasedArray=[];
+
+        for (let i = 0; i<array.length;i++){
+          increasedArray.push(array[i] +num);
+        }
+        return increasedArray;
+      }
+
+      console.log(addNum([1,2,3],3));
+
+      function addArrays(array1,array2){
+        let array3=[];
+        for (let i =0;i < array1.length; i++){
+          array3.push(array1[i]+array2[i]);
+        } 
+        return array3
+      }
+
+      console.log(addArrays([1,2,3], [4,5,6]));
+
+      function countPositive(nums){
+        let j=0;
+        for (let i=0; i <nums.length;i++){
+          if(nums[i] >0){
+            j++;
+          }
+        }
+        return j;
+      }
+
+      console.log(countPositive([-2,3,-5,7,10]));
     </script>
   </body>
 </html>
