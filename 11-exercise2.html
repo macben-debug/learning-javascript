@@ -6,8 +6,8 @@
   <body>
 
     <script>
-      const stringArray=['hello','world','search','good','search'];
-      const words=['not','found'];
+      let stringArray=['hello','world','search','good','search'];
+      //let words=['not','found'];
       let index =-1;
 
 
@@ -17,10 +17,46 @@
           index=i;
           break;
         }
-        console.log(index);
-        console.log(stringArray[i]);
+       // console.log(stringArray[i]);
         
       }
+      console.log(index);
+
+      function findIndex(array,word){
+        let index =-1;
+
+        for (let i =0;i<array.length;i++){
+          if (array[i] ===word){
+            index =i;
+            break;
+          }
+        }
+        return index;
+      }
+      console.log(findIndex(['green','red','blue','red'],'red'));
+
+      function removeEgg(foods){
+        foods = foods.slice().reverse();
+
+        let food =[];
+        let count =0;
+        for (let i =0;i<foods.length;i++){
+          
+          if(foods[i] === 'egg' & count <2){
+            count++;
+           continue;
+
+          }
+          food.push(foods[i]);
+         
+        }
+        return food.reverse();
+      }
+
+      const foods =['egg','ham','egg','egg','apple'];
+      console.log(removeEgg(foods));
+      console.log(foods);
+
     </script>
   </body>
 </html>
