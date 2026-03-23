@@ -33,7 +33,19 @@
         }
         return index;
       }
-      console.log(findIndex(['green','red','blue','red'],'red'));
+      //console.log(findIndex(['green','red','blue','red'],'red'));
+
+      function uniique(array){
+        let result =[];
+        for (let i =0; i<array.length;i++){
+          const word =  array[i];
+          if (findIndex(result,word === -1)){
+            result.push(word);
+          }
+        }
+        return result;
+      }
+      //console.log(uniique(['green','red','blue','red']));
 
       function removeEgg(foods){
         foods = foods.slice().reverse();
@@ -56,7 +68,20 @@
       const foods =['egg','ham','egg','egg','apple'];
       console.log(removeEgg(foods));
       console.log(foods);
-
+      //// challenge
+      
+      for(let i =0; i<=20; i++){
+        if( i %3 === 0  & i%5 === 0){
+          console.log('FizzBuzz');
+        }
+       else  if (i %3=== 0){
+          console.log('Fizz');
+        }
+        else if(i%5 ===0){
+          console.log('Buzz');
+        }else{
+          console.log(i);}
+      }
     </script>
   </body>
 </html>
