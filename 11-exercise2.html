@@ -39,13 +39,13 @@
         let result =[];
         for (let i =0; i<array.length;i++){
           const word =  array[i];
-          if (findIndex(result,word === -1)){
+          if (findIndex(result,word) === -1){
             result.push(word);
           }
         }
         return result;
       }
-      //console.log(uniique(['green','red','blue','red']));
+      console.log(uniique(['green','red','blue','red']));
 
       function removeEgg(foods){
         foods = foods.slice().reverse();
