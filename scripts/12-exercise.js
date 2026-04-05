@@ -38,9 +38,18 @@ function addedButton(){
         display.innerHTML ='';
     },2000)
 }
+
 let messages =2;
-while (messages>0){
-    setInterval(function(){
+   
+
+let isdisplayNotification;
+let intervalId;
+displayNotification();
+function displayNotification(){
+    if(isdisplayNotification){
+        return ;
+    }
+    intervalId= setInterval(function(){
     if (document.title === '12 Exercises'){
     document.title= `(${messages}) New messages`;
     }
@@ -48,4 +57,12 @@ while (messages>0){
     document.title= '12 Exercises';
     }
     }, 1000);
+    isdisplayNotification =true;
+}
+
+function stopNotification(){
+    isdisplayNotification= false;
+
+    clearInterval(intervalId);
+    document.title='Exercise 12';
 }

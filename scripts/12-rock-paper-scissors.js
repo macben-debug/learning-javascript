@@ -14,9 +14,13 @@
       }*/
      let isAutoPLaying =false;
      let intervalId;
+
+     //const autoPlay =()=>{
+
+     //}
       function autoPlay(){
        if(!isAutoPLaying){
-          intervalId = setInterval(function(){
+          intervalId = setInterval(()=>{
             const playerMove = pickcomputerMove();
             playGame(playerMove);
           },
