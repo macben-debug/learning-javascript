@@ -12,10 +12,16 @@
     <button class="js-added" onclick="addedButton()">Added</button>
     <p class="js-display"></p>
 
-    <button onclick="messages++;">
+    <button onclick="messages++;
+    displayNotification();
+    ">
       Add
     </button>
-    <button onclick="messages--;">
+    <button onclick="messages--;
+    if(messages ===0){
+      stopNotification();
+    }
+    ">
       Remove
     </button>
    
