@@ -1,4 +1,4 @@
-let add = function(){
+let add = ()=>{
     console.log(2+3);
 }
 
@@ -15,21 +15,22 @@ function runTwice(fun){
 
 runTwice(add);  
 
-runTwice(function(){
+runTwice(()=>{
     console.log('12b');
 });
 
+const finishButton= document.querySelector('.js-button');
 
-
-function buttonChange(){
+finishButton.addEventListener('click',()=>{
     let button = document.querySelector('.js-button');
     button.innerHTML ='Loading...';
    setTimeout ( ()=>{
     button.innerHTML ='Finished!';
    },2000)
-}
+})
 
-function addedButton(){
+const addedButton= document.querySelector('.js-added');
+addedButton.addEventListener('click',()=>{
     let timeoutId; 
     const display = document.querySelector('.js-display');
     display.innerHTML = 'Added';
@@ -37,19 +38,19 @@ function addedButton(){
     timeoutId =setTimeout( () =>{
         display.innerHTML ='';
     },2000)
-}
+})
 
+const addNotification = document.querySelector('.js-display-notification');
 let messages =2;
-   
-
 let isdisplayNotification;
 let intervalId;
 displayNotification();
-function displayNotification(){
+addNotification.addEventListener('click',()=>{
+    messages++;
     if(isdisplayNotification){
         return ;
     }
-    intervalId= setInterval(function(){
+    intervalId= setInterval(()=>{
     if (document.title === '12 Exercises'){
     document.title= `(${messages}) New messages`;
     }
@@ -59,7 +60,7 @@ function displayNotification(){
     }, 1000);
     isdisplayNotification =true;
 }
-
+)
 function stopNotification(){
     isdisplayNotification= false;
 
