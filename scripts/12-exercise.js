@@ -44,7 +44,7 @@ const addNotification = document.querySelector('.js-display-notification');
 let messages =2;
 let isdisplayNotification;
 let intervalId;
-displayNotification();
+//displayNotification();
 addNotification.addEventListener('click',()=>{
     messages++;
     if(isdisplayNotification){
@@ -61,9 +61,14 @@ addNotification.addEventListener('click',()=>{
     isdisplayNotification =true;
 }
 )
-function stopNotification(){
-    isdisplayNotification= false;
 
-    clearInterval(intervalId);
-    document.title='Exercise 12';
-}
+const removeNotification = document.querySelector('.js-remove-notification');
+
+removeNotification.addEventListener('click',()=>{
+    isdisplayNotification= false;
+    messages--;
+    if (messages === 0 ){
+        clearInterval(intervalId);
+        document.title='Exercise 12';
+    }
+})
