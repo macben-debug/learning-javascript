@@ -19,9 +19,10 @@ let intervalId;
 
 //}
 
-const autoPlay = document.querySelector('.auto-play-button');
 
-autoPlay.addEventListener('click',() =>{
+function autoPlay(){
+  const autoPlay = document.querySelector('.auto-play-button');
+
   if(!isAutoPLaying){
       intervalId = setInterval(()=>{
         const playerMove = pickcomputerMove();
@@ -29,13 +30,20 @@ autoPlay.addEventListener('click',() =>{
       },
     1000);
     isAutoPLaying=true;
+    autoPlay.innerHTML='Stop Playing';
+
     }
     else{
       clearInterval(intervalId);
       isAutoPLaying=false;
+      autoPlay.innerHTML='Auto Play';
+
     }
-  }
-);
+ }
+
+document.querySelector('.js-auto-button').addEventListener('click',()=>{
+  autoPlay();
+});
 document.querySelector('.js-rock-button').addEventListener('click',() => {
   playGame('rock');
 });
@@ -55,6 +63,10 @@ document.body.addEventListener('keydown',(event)=> {
   }
   else if(event.key === 's'){
     playGame('Scissors')
+  }
+
+  else if( event.key === 'a'){
+    autoPlay();
   }
 });
 
@@ -141,3 +153,12 @@ function pickcomputerMove(){
   } 
   return computerMove;
 }
+
+const resetScore = document.querySelector('.reset-score-button');
+resetScore.addEventListener('click',()=>{
+  score.wins=0;
+  score.losses=0;
+  score.ties=0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+})
