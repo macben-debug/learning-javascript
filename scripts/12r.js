@@ -68,6 +68,10 @@ document.body.addEventListener('keydown',(event)=> {
   else if( event.key === 'a'){
     autoPlay();
   }
+  else if (event.key === 'Backspace'){
+    showResetConfirmation();
+
+  }
 });
 
 function playGame(playerMove){
@@ -154,11 +158,45 @@ function pickcomputerMove(){
   return computerMove;
 }
 
-const resetScore = document.querySelector('.reset-score-button');
-resetScore.addEventListener('click',()=>{
+function resetScore(){
   score.wins=0;
   score.losses=0;
   score.ties=0;
   localStorage.removeItem('score');
   updateScoreElement();
-})
+  showResetConfirmation()
+}
+
+document.querySelector('.reset-score-button')
+  .addEventListener('click',()=>{
+    showResetConfirmation();
+  });
+
+
+function showResetConfirmation() {
+  document.querySelector('.js-reset-confirmation')
+  .innerHTML = `
+    Are you sure you want to reset the score? 
+    <button class="js-reset-yes  reset-yes-confirmation">
+     Yes
+    </button>
+
+    <button class="js-reset-no reset-no-confirmation" >
+     No
+    </button>
+    `;
+
+    document.querySelector('.js-reset-yes').addEventListener('click',()=>{
+      resetScore();
+      hideResetRequest();
+    });
+    document.querySelector('.js-reset-no').addEventListener('click',()=>{
+      hideResetRequest();
+    });
+
+}
+
+function hideResetRequest(){
+  document.querySelector('.js-reset-confirmation')
+  .innerHTML = '';
+}

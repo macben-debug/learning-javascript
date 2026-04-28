@@ -36,3 +36,7 @@ body{
   padding:8px 15px;
   cursor: pointer;
 }
+.reset-yes-confirmation,
+.reset-no-confirmation{
+  color:grey
+}
